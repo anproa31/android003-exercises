@@ -2,8 +2,8 @@ package com.rxmobileteam.lecture1.data;
 
 import com.rxmobileteam.lecture1.service.Product;
 import com.rxmobileteam.lecture1.service.ProductRepository;
-import com.rxmobileteam.utils.ExerciseNotCompletedException;
-import org.jetbrains.annotations.NotNull;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class ProductDao implements ProductRepository {
      * @return {@code true} if a product was stored, {@code false} otherwise
      */
     @Override
-    public boolean add(@NotNull Product product) {
+    public boolean add(Product product) {
         if (product == null) {
             return false;
         }

@@ -1,20 +1,20 @@
 package com.rxmobileteam.lecture1.service;
 
-import org.jetbrains.annotations.NotNull;
+
 
 public class Product {
-    @NotNull
+
     private final String id;
-    @NotNull
+
     private final String name;
-    @NotNull
+
     private final String description;
     private final double price;
 
     public Product(
-            @NotNull String id,
-            @NotNull String name,
-            @NotNull String description,
+             String id,
+             String name,
+             String description,
             double price
     ) {
         this.id = id;

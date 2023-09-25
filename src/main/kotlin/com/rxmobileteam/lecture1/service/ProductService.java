@@ -1,8 +1,7 @@
 package com.rxmobileteam.lecture1.service;
 
 import com.rxmobileteam.lecture1.data.ProductDao;
-import com.rxmobileteam.utils.ExerciseNotCompletedException;
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class ProductService {
      * @param product a product to add
      * @return {@code true} if a product was added, {@code false} otherwise.
      */
-    public boolean addProduct(@NotNull Product product) {
+    public boolean addProduct(Product product) {
         return new ProductDao().add(product);
         // TODO: implement this method
 //        throw new ExerciseNotCompletedException();
