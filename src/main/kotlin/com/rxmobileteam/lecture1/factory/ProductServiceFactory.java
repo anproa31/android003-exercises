@@ -17,7 +17,7 @@ public class ProductServiceFactory {
      * @return ProductService
      */
     public ProductService createProductService() {
-        return new ProductService();
+        return new ProductService(new ProductDao());
         // TODO: implement this method
 //        throw new ExerciseNotCompletedException();
     }

@@ -1,6 +1,7 @@
 package com.rxmobileteam.lecture1.data;
 
 import com.rxmobileteam.lecture1.service.Product;
+import com.rxmobileteam.lecture1.service.ProductRepository;
 import com.rxmobileteam.utils.ExerciseNotCompletedException;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,7 +18,7 @@ import java.util.Set;
  * todo: 1. Implement a method {@link ProductDao#add(Product)} that store new product into the set
  * todo: 2. Implement a method {@link ProductDao#findAll()} that returns a set of all products
  */
-public class ProductDao{
+public class ProductDao implements ProductRepository {
 //    private final Set<Product> products = new HashSet<>();
     private final HashMap<Integer, Product> products;
 
@@ -31,6 +32,7 @@ public class ProductDao{
      * @param product a product to store
      * @return {@code true} if a product was stored, {@code false} otherwise
      */
+    @Override
     public boolean add(@NotNull Product product) {
         if (product == null) {
             return false;
@@ -51,11 +53,11 @@ public class ProductDao{
 ////        throw new ExerciseNotCompletedException();
 //    }
 
+    @Override
     public List<Product> findAll() {
         List<Product> listProducts = new ArrayList<>();
         this.products.forEach((key, value) -> listProducts.add(value));
         return listProducts;
 //        return new ArrayList<>(this.products.values());
     }
-
 }

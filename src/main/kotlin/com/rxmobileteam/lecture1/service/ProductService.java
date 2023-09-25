@@ -16,6 +16,12 @@ import java.util.Set;
  */
 public class ProductService {
 
+
+    private final ProductRepository productRepository;
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     /**
      * Adds a new product to the system.
      *
