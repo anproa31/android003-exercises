@@ -4,7 +4,9 @@ import com.rxmobileteam.lecture1.data.ProductDao;
 import com.rxmobileteam.utils.ExerciseNotCompletedException;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * {@link ProductService} provides an API that allows to manage {@link Product}s.
@@ -21,8 +23,9 @@ public class ProductService {
      * @return {@code true} if a product was added, {@code false} otherwise.
      */
     public boolean addProduct(@NotNull Product product) {
+        return new ProductDao().add(product);
         // TODO: implement this method
-        throw new ExerciseNotCompletedException();
+//        throw new ExerciseNotCompletedException();
     }
 
     /**
@@ -32,7 +35,17 @@ public class ProductService {
      * @return a list of found products
      */
     public List<Product> searchProducts(String query) {
+        List<Product> listProduct = new ProductDao().findAll();
+        List<Product> listProductFound = new ArrayList<>();
+        listProduct.forEach(e -> {
+            String name = e.getName();
+            String description = e.getDescription();
+            if (name.contains(query) || description.contains(query)) {
+                listProductFound.add(e);
+            }
+        });
+        return listProductFound;
         // TODO: implement this method
-        throw new ExerciseNotCompletedException();
+//        throw new ExerciseNotCompletedException();
     }
 }
