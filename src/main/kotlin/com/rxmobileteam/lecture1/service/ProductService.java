@@ -40,7 +40,8 @@ public class ProductService {
         listProduct.forEach(e -> {
             String name = e.getName();
             String description = e.getDescription();
-            if (name.contains(query) || description.contains(query)) {
+            String price = String.valueOf(e.getPrice());
+            if (name.contains(query) || description.contains(query) || price.contains(query)) {
                 listProductFound.add(e);
             }
         });
